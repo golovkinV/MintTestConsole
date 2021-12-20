@@ -14,7 +14,9 @@ public final class FeatureToggleViewModel {
     public let input: Input = .init()
     public let output: Output = .init()
     
-    public init() {}
+    public init() {
+        setUpBindings()
+    }
     
     private func setUpBindings() {
         input.didLoad.publisher
