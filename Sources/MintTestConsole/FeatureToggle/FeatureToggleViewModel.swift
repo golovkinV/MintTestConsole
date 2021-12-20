@@ -27,8 +27,15 @@ public final class FeatureToggleViewModel {
     private func setUpBindings() {
         input.didLoad.publisher
             .sink { [weak self] _  in
-                self?.output.items = FeatureToggleContainer.shared.provider.features
+                self?.fetchFeatures()
             }
+            .store(in: &bag)
+    }
+    
+    private func fetchFeatures() {
+        FeatureToggleContainer.shared.service.fetchFeatures()
+            .apiAnyPublisher()
+            .assign(to: \.items, on: output)
             .store(in: &bag)
     }
 }
