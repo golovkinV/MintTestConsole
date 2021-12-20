@@ -8,7 +8,7 @@
 import UIKit
 
 public final class FeatureToggleAssembly {
-    class func createModule() -> FeatureToggleViewController {
+    public class func createModule() -> FeatureToggleViewController {
         let module = FeatureToggleViewController()
         return module
     }
