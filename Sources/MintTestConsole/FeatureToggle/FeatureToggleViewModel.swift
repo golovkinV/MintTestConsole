@@ -18,6 +18,12 @@ public final class FeatureToggleViewModel {
         setUpBindings()
     }
     
+    func changeFeatureState(_ model: Feature) {
+        FeatureToggleContainer.shared.service.changeFeatureState(model)
+            .sink(receiveValue: {})
+            .store(in: &bag)
+    }
+    
     private func setUpBindings() {
         input.didLoad.publisher
             .sink { [weak self] _  in

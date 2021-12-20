@@ -115,6 +115,6 @@ extension FeatureToggleViewController: UICollectionViewDelegate {
 extension FeatureToggleViewController: FeatureDelegate {
     public func changeState(_ model: Feature?) {
         guard let model = model else { return }
-//        viewModel.changeFeatureState(model)
+        viewModel.changeFeatureState(model)
     }
 }
