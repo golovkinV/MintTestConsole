@@ -14,13 +14,13 @@ public final class FeatureToggleViewController: UIViewController {
     
     let viewModel: FeatureToggleViewModel = .init()
     
-    private(set) var items: [Feature] = [] {
+    public private(set) var items: [Feature] = [] {
         didSet {
             collectionView.reloadData()
         }
     }
     
-    private(set) lazy var collectionView: UICollectionView = {
+    public private(set) lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout().apply {
             $0.itemSize = .init(width: UIScreen.main.bounds.width, height: 48)
         }
@@ -44,7 +44,7 @@ public final class FeatureToggleViewController: UIViewController {
     // MARK: - SetUp Bindings
     
     private func setupViews() {
-        title = "Testing"
+        title = "Features"
         view.backgroundColor = .white
         view.addSubview(collectionView)
         layoutConstraints()

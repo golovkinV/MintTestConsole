@@ -24,4 +24,8 @@ public final class FeatureToggleContainer {
         self.provider = provider
         return self
     }
+    
+    public func fetchState(for key: String) -> Bool {
+        service.fetchFeatureState(for: key)
+    }
 }

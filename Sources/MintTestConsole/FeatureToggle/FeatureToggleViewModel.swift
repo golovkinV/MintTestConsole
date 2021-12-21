@@ -20,8 +20,6 @@ public final class FeatureToggleViewModel {
     
     func changeFeatureState(_ model: Feature) {
         FeatureToggleContainer.shared.service.changeFeatureState(model)
-            .sink(receiveValue: {})
-            .store(in: &bag)
     }
     
     private func setUpBindings() {
@@ -33,10 +31,7 @@ public final class FeatureToggleViewModel {
     }
     
     private func fetchFeatures() {
-        FeatureToggleContainer.shared.service.fetchFeatures()
-            .apiAnyPublisher()
-            .assign(to: \.items, on: output)
-            .store(in: &bag)
+        output.items = FeatureToggleContainer.shared.service.fetchFeatures()
     }
 }
 
