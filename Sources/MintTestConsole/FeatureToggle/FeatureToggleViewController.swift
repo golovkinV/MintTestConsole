@@ -91,26 +91,7 @@ extension FeatureToggleViewController: UICollectionViewDataSource {
     }
 }
 
-extension FeatureToggleViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-//        let item = items[indexPath.item]
-//        guard item.type == .contextMenu else { return nil }
-//        return configureContextMenu(index: indexPath.row)
-//    }
-//
-//    private func configureContextMenu(index: Int) -> UIContextMenuConfiguration {
-//        UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
-//            let currentBaseUrl = FeatureProvider.shared.baseUrlType ?? Configuration.buildUrlType
-//            let prod = UIAction(title: "Production", state: currentBaseUrl == .production ? .on: .off) { [weak self] _ in
-//                self?.viewModel.changeBaseUrl(.production)
-//            }
-//            let stage = UIAction(title: "Staging", state: currentBaseUrl == .staging ? .on: .off) { [weak self] _ in
-//                self?.viewModel.changeBaseUrl(.staging)
-//            }
-//            return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [prod, stage])
-//        }
-//    }
-}
+extension FeatureToggleViewController: UICollectionViewDelegate {}
 
 extension FeatureToggleViewController: FeatureDelegate {
     public func changeState(_ model: Feature?) {

@@ -11,7 +11,6 @@ public protocol FeatureRepository {
     func fetchFeatures() -> [Feature]
     func fetchFeatureState(for key: String) -> Bool
     func changeFeatureState(_ model: Feature)
-//    func changeBaseUrl(_ type: BaseUrl)
 }
 
 public final class DefaultFeatureRepository: FeatureRepository {
@@ -31,9 +30,4 @@ public final class DefaultFeatureRepository: FeatureRepository {
     public func changeFeatureState(_ model: Feature) {
         UserDefaults.standard.set(model.isActive, forKey: model.key)
     }
-    
-//    func changeBaseUrl(_ type: BaseUrl) {
-//        UserDefaults.standard.set(type.rawValue, forKey: FeatureName.baseUrl.rawValue)
-//    }
-    
 }
